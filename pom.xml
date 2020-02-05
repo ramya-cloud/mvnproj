@@ -8,7 +8,8 @@
     <name>myproj</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+</properties> 
+
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
@@ -23,6 +24,7 @@
         <developerConnection>scm:git:https://github.com/javaee-samples/javaee7-simple-sample.git</developerConnection>
         <tag>v1.5</tag>
     </scm>
+
     <developers>
         <developer>
             <name>Arun Gupta</name>
@@ -55,6 +57,22 @@
 		<path>/myproj</path>
 	</configuration>
 </plugin>
+
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.1.0</version>
+  <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>com.mypackage.MyClass</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+
+      </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.1</version>
